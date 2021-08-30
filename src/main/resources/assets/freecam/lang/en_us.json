@@ -1,0 +1,11 @@
+{
+  "key.category.butukay-tweaks": "Butukay Tweaks",
+  "key.freecam.toggle": "Toogle FreeCamera",
+  "message.freecam.enabled": "FreeCamera enabled",
+  "message.freecam.disabled": "FreeCamera disabled",
+  "title.freecam.config" : "FreeCamera Config",
+  "option.freecam.fly-speed" : "Camera fly speed",
+  "option.freecam.command-name" : "Command name",
+  "option.freecam.enable-command" : "Enable command usage",
+  "option.freecam.action-bar" : "Send message to action bar"
+}

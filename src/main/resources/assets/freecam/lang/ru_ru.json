@@ -1,0 +1,11 @@
+{
+  "key.category.butukay-tweaks": "Butukay Tweaks",
+  "key.freecam.toggle": "Переключить FreeCamera",
+  "message.freecam.enabled": "FreeCamera включен",
+  "message.freecam.disabled": "FreeCamera выключен",
+  "title.freecam.config" : "Настройки FreeCamera",
+  "option.freecam.fly-speed": "Скорость пересещения камеры",
+  "option.freecam.command-name": "Название комманды",
+  "option.freecam.enable-command": "Использовать комманду",
+  "option.freecam.action-bar": "Показывать сообщение в action bar"
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "freecam",
+  "version": "${version}",
+  "name": "FreeCamera",
+  "description": "Choose a key and toggle camera noclip",
+  "authors": [
+    "Butukay"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/freecam/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "com.butukay.freecam.Freecam"
+    ],
+    "modmenu": [
+      "com.butukay.freecam.config.ModMenu"
+    ]
+  },
+  "mixins": [
+    "freecam.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.6",
+    "fabric": "*",
+    "minecraft": "1.17.1"
+  },
+  "custom": {
+    "modmenu": {
+      "links": { "modmenu.discord": "https://discord.gg/Q6PxYd2WXp" },
+      "badges": [ ],
+      "parent": {
+        "id": "tweaks",
+        "name": "ButukayTweaks",
+        "description": "Butukay's simple tweaks",
+        "icon": "assets/freecam/parent-icon.png",
+        "badges": []
+      }
+    }
+  }
+}
