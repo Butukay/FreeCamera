@@ -20,8 +20,6 @@ public abstract class GameRendererMixin {
     private MinecraftClient client;
 
     private Entity cameraEntityOriginal;
-//    private float realYaw;
-//    private float realPitch;
 
     @Inject(method = "renderWorld", at = @At(
             value = "INVOKE", shift = Shift.AFTER,
@@ -35,15 +33,6 @@ public abstract class GameRendererMixin {
                 this.client.setCameraEntity(camera);
             }
         }
-//        else if (FeatureToggle.TWEAK_ELYTRA_CAMERA.getBooleanValue() && Hotkeys.ELYTRA_CAMERA.getKeybind().isKeybindHeld()) {
-//            Entity entity = this.client.getCameraEntity();
-//
-//            if (entity != null) {
-//                this.realYaw = entity.yaw;
-//                this.realPitch = entity.pitch;
-//                MiscUtils.setEntityRotations(entity, MiscUtils.getCameraYaw(), MiscUtils.getCameraPitch());
-//            }
-//        }
     }
 
     @Inject(method = "renderWorld", at = @At("RETURN"))

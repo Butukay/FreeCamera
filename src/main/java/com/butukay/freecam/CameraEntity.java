@@ -17,9 +17,7 @@ public class CameraEntity extends ClientPlayerEntity {
     private static float strafeRamped;
     private static float verticalRamped;
 
-    public CameraEntity(MinecraftClient mc, ClientWorld world,
-                        ClientPlayNetworkHandler nethandler, StatHandler stats,
-                        ClientRecipeBook recipeBook) {
+    public CameraEntity(MinecraftClient mc, ClientWorld world, ClientPlayNetworkHandler nethandler, StatHandler stats, ClientRecipeBook recipeBook) {
         super(mc, world, nethandler, stats, recipeBook, false, false);
     }
 
@@ -85,7 +83,6 @@ public class CameraEntity extends ClientPlayerEntity {
                 rampAmount *= -1f;
             }
 
-            // Immediately kill the motion when changing direction to the opposite
             if ((input < 0) != (current < 0)) {
                 current = 0;
             }

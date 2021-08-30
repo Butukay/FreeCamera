@@ -21,7 +21,7 @@ public class Freecam implements ModInitializer {
 
         FreecamConfigUtil.loadConfig();
 
-        KeyBinding binding1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.freecam.toggle", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_U, "key.category.butukay-tweaks"));
+        KeyBinding binding1 = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.freecam.toggle", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.category.butukay-tweaks"));
 
         ClientTickCallback.EVENT.register(client -> {
             while (binding1.wasPressed()) {

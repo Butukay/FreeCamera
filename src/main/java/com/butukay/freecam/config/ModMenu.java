@@ -21,7 +21,7 @@ public class ModMenu implements ModMenuApi {
 
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
-            settings.addEntry(entryBuilder.startIntSlider(new TranslatableText("option.freecam.fly-speed"), Freecam.getConfig().getFlySpeed(), 1 , 30)
+            settings.addEntry(entryBuilder.startIntSlider(new TranslatableText("option.freecam.fly-speed"), Freecam.getConfig().getFlySpeed(), 1, 30)
                     .setDefaultValue(10)
                     .setSaveConsumer(newValue -> Freecam.getConfig().setFlySpeed(newValue))
                     .build());

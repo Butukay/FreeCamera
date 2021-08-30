@@ -11,9 +11,8 @@ import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.render.WorldRenderer;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Matrix4f;
-
+import net.minecraft.entity.Entity;
 
 @Mixin(value = WorldRenderer.class, priority = 1001)
 public class WorldRendererMixin {
@@ -37,7 +36,6 @@ public class WorldRendererMixin {
         Freecam.setSpectator(false);
     }
 
-    // Allow rendering the client player entity by spoofing one of the entity rendering conditions while in Free Camera mode
     @Redirect(method = "render", require = 0, at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/render/Camera;getFocusedEntity()Lnet/minecraft/entity/Entity;", ordinal = 3))
     private Entity allowRenderingClientPlayerInFreeCameraMode(Camera camera) {
@@ -51,9 +49,6 @@ public class WorldRendererMixin {
     @Redirect(method = "setupTerrain", require = 0, at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/render/BuiltChunkStorage;updateCameraPosition(DD)V"))
     private void preventRenderChunkPositionUpdates(net.minecraft.client.render.BuiltChunkStorage storage, double viewEntityX, double viewEntityZ) {
-        // Don't update the RenderChunk positions when moving around in the Free Camera mode.
-        // Otherwise the chunks would become empty when they are outside the render range
-        // from the camera entity, ie. on the other side of the actual player.
         if (!Freecam.isEnabled()) {
             storage.updateCameraPosition(viewEntityX, viewEntityZ);
         }

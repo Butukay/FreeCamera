@@ -1,6 +1,5 @@
 package com.butukay.freecam.config;
 
-
 public class FreecamConfig {
     private int flySpeed = 10;
     private boolean enableCommand = false;
